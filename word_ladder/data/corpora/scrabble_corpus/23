@@ -1,0 +1,58 @@
+graph [
+  node [
+    id 0
+    label "carboxymethylcelluloses"
+  ]
+  node [
+    id 1
+    label "deinstitutionalizations"
+  ]
+  node [
+    id 2
+    label "dichlorodifluoromethane"
+  ]
+  node [
+    id 3
+    label "electroencephalographer"
+  ]
+  node [
+    id 4
+    label "electroencephalographic"
+  ]
+  node [
+    id 5
+    label "hexamethylenetetramines"
+  ]
+  node [
+    id 6
+    label "indistinguishablenesses"
+  ]
+  node [
+    id 7
+    label "intersubstitutabilities"
+  ]
+  node [
+    id 8
+    label "microspectrophotometers"
+  ]
+  node [
+    id 9
+    label "microspectrophotometric"
+  ]
+  node [
+    id 10
+    label "nonrepresentationalisms"
+  ]
+  node [
+    id 11
+    label "overintellectualization"
+  ]
+  node [
+    id 12
+    label "reinstitutionalizations"
+  ]
+  edge [
+    source 1
+    target 12
+  ]
+]

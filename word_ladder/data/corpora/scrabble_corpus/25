@@ -1,0 +1,10 @@
+graph [
+  node [
+    id 0
+    label "immunoelectrophoretically"
+  ]
+  node [
+    id 1
+    label "phosphatidylethanolamines"
+  ]
+]

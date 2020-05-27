@@ -1,0 +1,38 @@
+graph [
+  node [
+    id 0
+    label "dichlorodifluoromethanes"
+  ]
+  node [
+    id 1
+    label "electrocardiographically"
+  ]
+  node [
+    id 2
+    label "electroencephalographers"
+  ]
+  node [
+    id 3
+    label "electroencephalographies"
+  ]
+  node [
+    id 4
+    label "intercomprehensibilities"
+  ]
+  node [
+    id 5
+    label "microelectrophoretically"
+  ]
+  node [
+    id 6
+    label "microspectrophotometries"
+  ]
+  node [
+    id 7
+    label "overintellectualizations"
+  ]
+  node [
+    id 8
+    label "phosphatidylethanolamine"
+  ]
+]

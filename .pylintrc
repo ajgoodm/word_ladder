@@ -1,0 +1,40 @@
+[MASTER]
+# pylint makes deeply recursive calls, make sure we have a big enough stack
+init-hook='import sys; sys.setrecursionlimit(5000)'
+
+[MESSAGES CONTROL]
+disable = E1101, C0111, W0511, no-self-use, bad-continuation, import-error, logging-fstring-interpolation, logging-format-interpolation, wildcard-import, broad-except, inconsistent-return-statements, line-too-long, no-value-for-parameter, singleton-comparison, unused-argument, anomalous-backslash-in-string
+
+[BASIC]
+# Provide some good names that we allow
+good-names=a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1, p1, q1, r1, s1, t1, u1, v1, w1, x1, y1, z1, a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l2, m2, n2, o2, p2, q2, r2, s2, t2, u2, v2, w2, x2, y2, z2, dx, dy, db, id, dt, df, op, logger, foo, bar, baz, X, Model, M, A, B, DataClass, om, bd, sc, sts, t_min_C, t_max_C, daily_exposure_MJ_per_m2, P, Tc, Tk, T, es, RH, ph
+
+[DESIGN]
+# maximum line length
+max-line-length = 120
+
+# Maximum number of arguments for function / method
+max-args = 10
+
+# Maximum number of locals for function / method body
+max-locals = 20
+
+# Maximum number of attributes for a class (see R0902).
+max-attributes = 20
+
+# Minimum number of public methods for a class (see R0903).
+# model class can have not public methods
+min-public-methods = 0
+
+[SIMILARITIES]
+# Minimum lines number of a similarity.
+min-similarity-lines=10
+
+# Ignore comments when computing similarities.
+ignore-comments=yes
+
+# Ignore docstrings when computing similarities.
+ignore-docstrings=yes
+
+# Ignore imports when computing similarities.
+ignore-imports=yes
