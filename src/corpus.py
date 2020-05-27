@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 class Corpus:
     def __init__(self, words: Iterable[str]):
-        self.words = defaultdict(list)
+        self._words = defaultdict(list)
         self.graphs = {}
 
         self._sort_words(words)
@@ -24,14 +24,14 @@ class Corpus:
     def _sort_words(self, words: Iterable[str]):
         logger.info("splitting words by length")
         for word in tqdm(words):
-            self.words[len(word)].append(word)
+            self._words[len(word)].append(word)
 
         logger.info("alphabetizing words")
-        for word_list in self.words.values():
+        for word_list in self._words.values():
             word_list.sort()
 
     def _build_graphs(self):
-        for word_len, word_list in self.words.items():
+        for word_len, word_list in self._words.items():
             g = nx.Graph()
             logger.info("building nodes")
             for word in word_list:
@@ -50,15 +50,22 @@ class Corpus:
         for word_length, graph in self.graphs.items():
             nx.readwrite.gml.write_gml(graph, output_dir / str(word_length))
 
+    @classmethod
+    def load_graphs(cls, output_dir: Path):
+        corpus = cls([])
+        for path in output_dir.iterdir():
+            corpus.graphs[int(path.name)] = nx.readwrite.gml.read_gml(path)
+        return corpus
+
     def get_ladder(self, word_1: str, word_2: str):
         if len(word_1) != len(word_2):
             raise ValueError(
                 f"Words must be the same length to make a word ladder. Got {word_1} and {word_2}"
             )
-        if len(word_1) not in self.words.keys():
+        if len(word_1) not in self.graphs.keys():
             raise WordNotFound(f"Words {word_1} and {word_2} not in corpus")
         for word in [word_1, word_2]:
-            if word not in self.words[len(word)]:
+            if word not in self.graphs[len(word)].nodes:
                 raise WordNotFound(f"Word {word} not in corpus")
 
         return nx.shortest_path(self.graphs[len(word_1)], word_1, word_2)

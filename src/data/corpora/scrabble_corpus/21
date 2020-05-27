@@ -1,0 +1,254 @@
+graph [
+  node [
+    id 0
+    label "acetylcholinesterases"
+  ]
+  node [
+    id 1
+    label "adrenocorticosteroids"
+  ]
+  node [
+    id 2
+    label "adrenocorticotrophins"
+  ]
+  node [
+    id 3
+    label "anthropomorphizations"
+  ]
+  node [
+    id 4
+    label "antiauthoritarianisms"
+  ]
+  node [
+    id 5
+    label "antiferromagnetically"
+  ]
+  node [
+    id 6
+    label "buckminsterfullerenes"
+  ]
+  node [
+    id 7
+    label "clinicopathologically"
+  ]
+  node [
+    id 8
+    label "compartmentalizations"
+  ]
+  node [
+    id 9
+    label "constitutionalization"
+  ]
+  node [
+    id 10
+    label "contemporaneousnesses"
+  ]
+  node [
+    id 11
+    label "countercountermeasure"
+  ]
+  node [
+    id 12
+    label "counterdemonstrations"
+  ]
+  node [
+    id 13
+    label "counterinterpretation"
+  ]
+  node [
+    id 14
+    label "dendrochronologically"
+  ]
+  node [
+    id 15
+    label "disadvantageousnesses"
+  ]
+  node [
+    id 16
+    label "disestablishmentarian"
+  ]
+  node [
+    id 17
+    label "electrocardiographies"
+  ]
+  node [
+    id 18
+    label "electroencephalograms"
+  ]
+  node [
+    id 19
+    label "electroencephalograph"
+  ]
+  node [
+    id 20
+    label "electromyographically"
+  ]
+  node [
+    id 21
+    label "electroretinographies"
+  ]
+  node [
+    id 22
+    label "establishmentarianism"
+  ]
+  node [
+    id 23
+    label "extraterritorialities"
+  ]
+  node [
+    id 24
+    label "hypercholesterolemias"
+  ]
+  node [
+    id 25
+    label "hypersusceptibilities"
+  ]
+  node [
+    id 26
+    label "immunocytochemistries"
+  ]
+  node [
+    id 27
+    label "immunoelectrophoreses"
+  ]
+  node [
+    id 28
+    label "immunoelectrophoresis"
+  ]
+  node [
+    id 29
+    label "immunoelectrophoretic"
+  ]
+  node [
+    id 30
+    label "incomprehensibilities"
+  ]
+  node [
+    id 31
+    label "indistinguishableness"
+  ]
+  node [
+    id 32
+    label "institutionalizations"
+  ]
+  node [
+    id 33
+    label "interchangeablenesses"
+  ]
+  node [
+    id 34
+    label "interconvertibilities"
+  ]
+  node [
+    id 35
+    label "internationalizations"
+  ]
+  node [
+    id 36
+    label "intersubstitutability"
+  ]
+  node [
+    id 37
+    label "meningoencephalitides"
+  ]
+  node [
+    id 38
+    label "microminiaturizations"
+  ]
+  node [
+    id 39
+    label "multidimensionalities"
+  ]
+  node [
+    id 40
+    label "neuroendocrinological"
+  ]
+  node [
+    id 41
+    label "neuroendocrinologists"
+  ]
+  node [
+    id 42
+    label "nondenominationalisms"
+  ]
+  node [
+    id 43
+    label "otorhinolaryngologies"
+  ]
+  node [
+    id 44
+    label "otorhinolaryngologist"
+  ]
+  node [
+    id 45
+    label "overcommercialization"
+  ]
+  node [
+    id 46
+    label "overintellectualizing"
+  ]
+  node [
+    id 47
+    label "phosphoglyceraldehyde"
+  ]
+  node [
+    id 48
+    label "photolithographically"
+  ]
+  node [
+    id 49
+    label "photophosphorylations"
+  ]
+  node [
+    id 50
+    label "pseudocholinesterases"
+  ]
+  node [
+    id 51
+    label "pseudosophistications"
+  ]
+  node [
+    id 52
+    label "psychopharmacological"
+  ]
+  node [
+    id 53
+    label "psychopharmacologists"
+  ]
+  node [
+    id 54
+    label "psychophysiologically"
+  ]
+  node [
+    id 55
+    label "psychotherapeutically"
+  ]
+  node [
+    id 56
+    label "stereomicroscopically"
+  ]
+  node [
+    id 57
+    label "straightforwardnesses"
+  ]
+  node [
+    id 58
+    label "tetrahydrocannabinols"
+  ]
+  node [
+    id 59
+    label "unconstitutionalities"
+  ]
+  node [
+    id 60
+    label "undemonstrativenesses"
+  ]
+  node [
+    id 61
+    label "unexceptionablenesses"
+  ]
+  edge [
+    source 27
+    target 28
+  ]
+]
