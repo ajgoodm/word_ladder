@@ -7,8 +7,8 @@ from typing import Iterable
 import networkx as nx
 from tqdm import tqdm
 
-from src.execeptions import WordNotFound
-from src.utils.words import later_neighbors
+from word_ladder.execeptions import WordNotFound
+from word_ladder.utils.words import later_neighbors
 
 logger = logging.getLogger(__name__)
 
