@@ -7,8 +7,8 @@ from typing import Iterable
 import networkx as nx
 from tqdm import tqdm
 
-from src.execeptions import WordNotFound
-from src.utils.words import later_neighbors
+from word_ladder.execeptions import WordNotFound
+from word_ladder.utils.words import later_neighbors
 
 logger = logging.getLogger(__name__)
 
@@ -48,13 +48,13 @@ class Corpus:
     def write_graphs(self, output_dir: Path):
         output_dir.mkdir(parents=True)
         for word_length, graph in self.graphs.items():
-            nx.readwrite.gml.write_gml(graph, output_dir / str(word_length))
+            nx.readwrite.gpickle.write_gpickle(graph, output_dir / str(word_length))
 
     @classmethod
     def load_graphs(cls, output_dir: Path):
         corpus = cls([])
         for path in output_dir.iterdir():
-            corpus.graphs[int(path.name)] = nx.readwrite.gml.read_gml(path)
+            corpus.graphs[int(path.name)] = nx.readwrite.gpickle.read_gpickle(path)
         return corpus
 
     def get_ladder(self, word_1: str, word_2: str):
