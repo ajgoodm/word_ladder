@@ -14,7 +14,7 @@ def cli():
     """Entrypoint for word-ladder cli."""
 
 
-@cli.command(help="calculate the shortest word ladder " "between two words")
+@cli.command(help="calculate the shortest word ladder between two words")
 @click.option(
     "--word-1",
     type=str,
