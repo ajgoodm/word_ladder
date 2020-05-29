@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import Iterable
 
 import networkx as nx
-from tqdm import tqdm
 
 from word_ladder.execeptions import WordNotFound
 from word_ladder.utils.words import later_neighbors
@@ -23,7 +22,7 @@ class Corpus:
 
     def _sort_words(self, words: Iterable[str]):
         logger.info("splitting words by length")
-        for word in tqdm(words):
+        for word in words:
             self._words[len(word)].append(word)
 
         logger.info("alphabetizing words")
@@ -38,7 +37,7 @@ class Corpus:
                 g.add_node(word)
 
             logger.info("building edges")
-            for word_1 in tqdm(g.nodes):
+            for word_1 in g.nodes:
                 for word_2 in later_neighbors(word_1):
                     if word_2 in g.nodes:
                         g.add_edge(word_1, word_2)
