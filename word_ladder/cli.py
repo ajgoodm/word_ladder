@@ -1,10 +1,14 @@
+import logging
 from pathlib import Path
 
 import click
 
 from word_ladder.corpus import Corpus
-from word_ladder.settings import PKG_DIR
-from word_ladder.utils.words import parse_words
+from word_ladder.settings import Config, PKG_DIR
+from word_ladder.utils.words import is_only_lowercase_az, parse_words
+
+logging.basicConfig(**Config.LOGGING_CONFIG)
+logger = logging.getLogger(__name__)
 
 SCRABBLE_CORPUS = PKG_DIR / "data" / "corpora" / "scrabble_corpus"
 
@@ -38,6 +42,12 @@ def cli():
     "Scrabble dictionary.",
 )
 def get_ladder(word_1: str, word_2: str, corpus_file: str):
+    for word in [word_1, word_2]:
+        if not is_only_lowercase_az(word):
+            raise ValueError(
+                f"words must match regex `^[a-z]*$`; received {word_1} and {word_2}"
+            )
+
     if corpus_file is not None:
         corpus = Corpus(parse_words(Path(corpus_file)))
     else:
