@@ -1,2 +1,2 @@
+click==7.1.2
 networkx==2.4
-tqdm==4.45.0
