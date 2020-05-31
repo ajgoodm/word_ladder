@@ -32,11 +32,11 @@ class Corpus:
     def _build_graphs(self):
         for word_len, word_list in self._words.items():
             g = nx.Graph()
-            logger.info("building nodes")
+            logger.info(f"building nodes for words of length {word_len}")
             for word in word_list:
                 g.add_node(word)
 
-            logger.info("building edges")
+            logger.info(f"building edges for words of length {word_len}")
             for word_1 in g.nodes:
                 for word_2 in later_neighbors(word_1):
                     if word_2 in g.nodes:
