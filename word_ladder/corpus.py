@@ -17,7 +17,8 @@ class Corpus:
         self._words = defaultdict(list)
         self.graphs = {}
 
-        self._sort_words(words)
+        if words:
+            self._sort_words(words)
         self._build_graphs()
 
     def _sort_words(self, words: Iterable[str]):

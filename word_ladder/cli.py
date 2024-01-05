@@ -53,6 +53,8 @@ def get_ladder(word_1: str, word_2: str, corpus_file: str):
     else:
         corpus = Corpus.load_graphs(SCRABBLE_CORPUS)
 
+    ladder = corpus.get_ladder(word_1, word_2)
     print(
-        f"The shortest ladder from {word_1} to {word_2} is {corpus.get_ladder(word_1, word_2)}"
+        f"The shortest ladder from {word_1} to {word_2} has length {len(ladder)};\n"
+        f"an example ladder of such length is {ladder}"
     )

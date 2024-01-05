@@ -6,7 +6,10 @@ setup(
     name="word_ladder",
     version=version,
     packages=find_packages(),
-    install_requires=["click", "networkx"],
+    install_requires=[
+        "click",
+        "networkx~=2.4"
+    ],
     entry_points={"console_scripts": ["word-ladder=word_ladder.cli:cli"]},
     include_package_data=True,
 )
