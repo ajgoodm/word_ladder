@@ -6,7 +6,7 @@ from pathlib import Path
 
 import networkx as nx
 
-from word_ladder.execeptions import WordNotFound
+from word_ladder.exceptions import WordNotFound
 from word_ladder.utils.words import later_neighbors
 
 logger = logging.getLogger(__name__)

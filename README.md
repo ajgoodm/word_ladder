@@ -16,7 +16,7 @@ $ uv sync
 ```
 
 This creates a virtual environment in `.venv`, installs the dependencies
-(`click` and `networkx`, plus `pre-commit` for development), and exposes the
+(`click` and `networkx`, plus the development tools below), and exposes the
 CLI utility, which can be invoked with `uv run`:
 
 ```bash
@@ -35,6 +35,26 @@ Commands:
 To skip the development dependencies, use `uv sync --no-dev`. To install
 `word-ladder` as a standalone command available outside this directory, use
 `uv tool install .`
+
+## Development
+
+To set up a development environment, run:
+
+```bash
+$ ./tools/bootstrap.sh
+```
+
+This installs all dependencies (including the development tools) and installs
+the [pre-commit](https://pre-commit.com) git hooks, which run on every commit:
+
+- [ruff](https://docs.astral.sh/ruff/) lints the code, sorts imports and formats it
+- [mypy](https://mypy-lang.org) type-checks the `word_ladder` package
+
+To run the hooks on every file at once:
+
+```bash
+$ uv run pre-commit run --all-files
+```
 
 ## Usage
 

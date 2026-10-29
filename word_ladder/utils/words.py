@@ -19,7 +19,7 @@ def count_differences(word_1: str, word_2: str) -> int:
     """
     if len(word_1) != len(word_2):
         raise ValueError(
-            f"words in a ladder must be the same lenght. Received {word_1} and {word_2}"
+            f"words in a ladder must be the same length. Received {word_1} and {word_2}"
         )
 
     n_diffs = 0
