@@ -9,14 +9,18 @@ These graphs have been generated for words in the [Scrabble](https://en.m.wikipe
 to find a shortest path (a word ladder) between the start word and end word.
 
 ## Installation
-`pip` installing the package locally (`pip install -e .`) will install the
-necessary dependencies (`click` and `networkx`) and expose the CLI utility, which
-can be invoked:
+This project uses [uv](https://docs.astral.sh/uv/). From the repository root, run:
 
 ```bash
-$ word-ladder --help
+$ uv sync
+```
 
-➜  word_ladder git:(master) ✗ word-ladder --help
+This creates a virtual environment in `.venv`, installs the dependencies
+(`click` and `networkx`, plus `pre-commit` for development), and exposes the
+CLI utility, which can be invoked with `uv run`:
+
+```bash
+$ uv run word-ladder --help
 Usage: word-ladder [OPTIONS] COMMAND [ARGS]...
 
   Entrypoint for word-ladder cli.
@@ -28,16 +32,20 @@ Commands:
   get-ladder  calculate the shortest word ladder between two words
 ```
 
+To skip the development dependencies, use `uv sync --no-dev`. To install
+`word-ladder` as a standalone command available outside this directory, use
+`uv tool install .`
+
 ## Usage
 
-To generate a ladder between two words, use the `word-ladder get-ladder`command:
+To generate a ladder between two words, use the `word-ladder get-ladder` command:
 
 ```bash
-$ word-ladder get-ladder --word-1 cat --word-2 dog
+$ uv run word-ladder get-ladder --word-1 cat --word-2 dog
     The shortest ladder from cat to dog has length 4;
     an example ladder of such length is ['cat', 'cot', 'cog', 'dog']
 
-$ word-ladder get-ladder --word-1 yellow --word-2 orange
+$ uv run word-ladder get-ladder --word-1 yellow --word-2 orange
     The shortest ladder from yellow to orange has length 20;
     an example ladder of such length is ['yellow', 'bellow', 'billow', 'billon', 'ballon', 'ballot', 'ballet', 'balled', 'bolled', 'bolted', 'boated', 'coated', 'crated', 'craned', 'cranes', 'cranks', 'pranks', 'prangs', 'orangs', 'orange']
 ```
@@ -60,7 +68,7 @@ $ cat /path/to/a/worse/corpus.txt
     cat
     dog
 
-$ word-ladder get-ladder --word-1 cat --word-2 dog --corpus-file /path/to/a/worse/corpus.txt
+$ uv run word-ladder get-ladder --word-1 cat --word-2 dog --corpus-file /path/to/a/worse/corpus.txt
     [ INFO - word_ladder.corpus - 2024-01-05 11:02:01,745 ]: splitting words by length
     [ INFO - word_ladder.corpus - 2024-01-05 11:02:01,745 ]: alphabetizing words
     [ INFO - word_ladder.corpus - 2024-01-05 11:02:01,745 ]: building nodes for words of length 3

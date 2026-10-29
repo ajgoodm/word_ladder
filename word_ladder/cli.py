@@ -4,10 +4,10 @@ from pathlib import Path
 import click
 
 from word_ladder.corpus import Corpus
-from word_ladder.settings import Config, PKG_DIR
+from word_ladder.settings import PKG_DIR, Config
 from word_ladder.utils.words import is_only_lowercase_az, parse_words
 
-logging.basicConfig(**Config.LOGGING_CONFIG)
+logging.basicConfig(level=Config.LOGGING_LEVEL, format=Config.LOGGING_FORMAT)
 logger = logging.getLogger(__name__)
 
 SCRABBLE_CORPUS = PKG_DIR / "data" / "corpora" / "scrabble_corpus"
