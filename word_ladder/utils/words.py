@@ -1,6 +1,6 @@
+from collections.abc import Generator
 from pathlib import Path
 import re
-from typing import Generator
 
 LOWERCASE_Z_ORD = 122
 
@@ -19,12 +19,11 @@ def count_differences(word_1: str, word_2: str) -> int:
     """
     if len(word_1) != len(word_2):
         raise ValueError(
-            "words in a ladder must be the same lenght. "
-            f"Received {word_1} and {word_2}"
+            f"words in a ladder must be the same length. Received {word_1} and {word_2}"
         )
 
     n_diffs = 0
-    for char_1, char_2 in zip(word_1, word_2):
+    for char_1, char_2 in zip(word_1, word_2, strict=True):
         if char_1 != char_2:
             n_diffs += 1
 
@@ -32,9 +31,7 @@ def count_differences(word_1: str, word_2: str) -> int:
 
 
 def is_only_lowercase_az(word: str):
-    if re.match("^[a-z]*$", word):
-        return True
-    return False
+    return bool(re.match("^[a-z]*$", word))
 
 
 def later_neighbors(word: str) -> Generator[str, None, None]:
@@ -62,7 +59,7 @@ def later_neighbors(word: str) -> Generator[str, None, None]:
 
 
 def parse_words(corpus_file: Path):
-    with open(corpus_file, "r") as file_handle:
+    with open(corpus_file, encoding="utf-8") as file_handle:
         words = file_handle.read().splitlines()
     valid_words = [word for word in words if is_only_lowercase_az(word)]
     return valid_words

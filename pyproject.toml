@@ -1,0 +1,49 @@
+[project]
+name = "word_ladder"
+dynamic = ["version"]
+description = "Generate the shortest word ladder between two words."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "click>=7.1.2",
+    # networkx 3.0 removed read_gpickle/write_gpickle, which corpus.py relies on.
+    "networkx>=2.4,<3",
+]
+
+[project.scripts]
+word-ladder = "word_ladder.cli:cli"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pre-commit>=2.4.0",
+    "ruff>=0.17.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "word_ladder/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["word_ladder"]
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+extend-select = ["I", "UP", "B"]
+
+[tool.ruff.lint.isort]
+section-order = ["standard-library", "third-party", "first-party"]
+known-first-party = ["word_ladder"]
+force-sort-within-sections = true
+
+[tool.mypy]
+python_version = "3.11"
+
+[[tool.mypy.overrides]]
+module = ["networkx", "networkx.*"]
+ignore_missing_imports = true

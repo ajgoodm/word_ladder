@@ -10,3 +10,5 @@
 word_ladder.egg-info
 build
 dist
+.venv
+.claude/settings.local.json

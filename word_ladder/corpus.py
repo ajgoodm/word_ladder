@@ -1,12 +1,12 @@
 from collections import defaultdict
+from collections.abc import Iterable
 from copy import deepcopy
 import logging
 from pathlib import Path
-from typing import Iterable
 
 import networkx as nx
 
-from word_ladder.execeptions import WordNotFound
+from word_ladder.exceptions import WordNotFound
 from word_ladder.utils.words import later_neighbors
 
 logger = logging.getLogger(__name__)
@@ -14,8 +14,8 @@ logger = logging.getLogger(__name__)
 
 class Corpus:
     def __init__(self, words: Iterable[str]):
-        self._words = defaultdict(list)
-        self.graphs = {}
+        self._words: defaultdict[int, list[str]] = defaultdict(list)
+        self.graphs: dict[int, nx.Graph] = {}
 
         if words:
             self._sort_words(words)
@@ -62,7 +62,7 @@ class Corpus:
             raise ValueError(
                 f"Words must be the same length to make a word ladder. Got {word_1} and {word_2}"
             )
-        if len(word_1) not in self.graphs.keys():
+        if len(word_1) not in self.graphs:
             raise WordNotFound(f"Words {word_1} and {word_2} not in corpus")
         for word in [word_1, word_2]:
             if word not in self.graphs[len(word)].nodes:
